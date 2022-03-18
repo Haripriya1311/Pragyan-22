@@ -1,0 +1,275 @@
+<html>
+    <head>
+        <title>Web</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+              }
+              
+              body {
+                background: #222;
+                font-family: Georgia, serif;
+                color: #fff;
+                font-size: 14px;
+              }
+              
+              a {
+                color: #ffffcc;
+                text-decoration: none;
+                -webkit-transition: 0.5s;
+                -moz-transition: 0.5s;
+                -o-transition: 0.5s;
+                -ms-transition: 0.5s;
+                transition: 0.5s;
+              }
+              a:hover,
+              a.selected {
+                color: #ffcc00;
+              }
+              
+              h1,
+              h2,
+              h4,
+              h5,
+              h6 {
+                text-align: center;
+                color: #ccc;
+                text-shadow: #000 1px 1px 2px;
+                margin-bottom: 5px;
+              }
+              h1 {
+                font-size: 14px;
+              }
+              h2 {
+                font-size: 12px;
+              }
+              .sociales {
+                text-align: center;
+                margin-bottom: 20px;
+              }
+              
+              #timeline {
+                width: 500px;
+                height: 600px;
+                overflow: hidden;
+                margin: 40px auto;
+                position: relative;
+                background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/dot.gif")
+                  3px top repeat-y;
+              }
+              #dates {
+                width: 100px;
+                height: 600px;
+                overflow: hidden;
+                float: left;
+              }
+              #dates li {
+                list-style: none;
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                font-size: 24px;
+                padding-left: 10px;
+                background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/biggerdot.png")
+                  left center no-repeat;
+              }
+              #dates a {
+                line-height: 38px;
+                padding-bottom: 10px;
+              }
+              #dates .selected {
+                font-size: 38px;
+              }
+              
+              #issues {
+                width: 400px;
+                height: 600px;
+                overflow: hidden;
+                float: left;
+              }
+              #issues li {
+                max-width: 300px; // width: 400px;
+                height: 600px;
+                list-style: none;
+                text-align: center; // add
+              }
+              #issues li.selected img {
+                -webkit-transform: scale(1.1, 1.1);
+                -moz-transform: scale(1.1, 1.1);
+                -o-transform: scale(1.1, 1.1);
+                -ms-transform: scale(1.1, 1.1);
+                transform: scale(1.1, 1.1);
+              }
+              #issues li img {
+                // float: left;
+                width: 200px; // add
+                margin: 10px 30px 10px 50px;
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE 8 */
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF); /* IE 6 & 7 */
+                zoom: 1;
+                -webkit-transition: all 2s ease-in-out;
+                -moz-transition: all 2s ease-in-out;
+                -o-transition: all 2s ease-in-out;
+                -ms-transition: all 2s ease-in-out;
+                transition: all 2s ease-in-out;
+                -webkit-transform: scale(0.7, 0.7);
+                -moz-transform: scale(0.7, 0.7);
+                -o-transform: scale(0.7, 0.7);
+                -ms-transform: scale(0.7, 0.7);
+                transform: scale(0.7, 0.7);
+              }
+              #issues li h1 {
+                color: #ffcc00;
+                font-size: 48px;
+                text-align: center;
+                text-shadow: #000 1px 1px 2px;
+              }
+              #issues li p {
+                font-size: 14px;
+                margin: 10px 20px;
+                font-weight: normal;
+                line-height: 22px;
+                text-shadow: #000 1px 1px 2px;
+              }
+              
+              #grad_top,
+              #grad_bottom {
+                width: 500px;
+                height: 80px;
+                position: absolute;
+              }
+              #grad_top {
+                top: 0;
+                background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_top.png")
+                  repeat-x;
+              }
+              #grad_bottom {
+                bottom: 0;
+                background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_bottom.png")
+                  repeat-x;
+              }
+              
+              #next,
+              #prev {
+                position: absolute;
+                left: 45%; // left: 55%;
+                font-size: 70px;
+                width: 38px;
+                height: 22px;
+                background-position: 0 -44px;
+                background-repeat: no-repeat;
+                text-indent: -9999px;
+                overflow: hidden;
+              }
+              #next:hover,
+              #prev:hover {
+                background-position: 0 0;
+              }
+              #next {
+                bottom: 0;
+                background-image: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/next_v.png");
+              }
+              #prev {
+                top: 0;
+                background-image: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/prev_v.png");
+              }
+              #next.disabled,
+              #prev.disabled {
+                opacity: 0.2;
+              }
+              
+        </style>
+    </head>
+    <body>
+        <div id="timeline">
+            <ul id="dates">
+              <li><a href="#1962" class="selected">1962</a></li>
+              <li><a href="#1976">1976</a></li>
+			  i><a href="#1978">1978</a></li>
+              <li><a href="#1986">1986</a></li>
+              <li><a href="#1990">1990</a></li>
+              <li><a href="#1993">1993</a></li>
+              <li><a href="#1994">1994</a></li>
+             
+              <li><a href="#2001">2001</a></li>
+             
+              <li><a href="#2012">2012</a></li>
+              <li><a href="#2014">2014</a></li>
+              
+            </ul>
+            <ul id="issues">
+              <li id="1962" class="selected">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/diagram-of-a-network-of-potential-internet-then-called-news-photo-1572448893.jpg?crop=0.767xw:1.00xh;0.119xw,0&resize=980:*" />
+                <h1>ARPA</h1>
+                <p>In 1962, MIT computer scientist J.C.R. Licklider comes up with the idea for a global computer network. He later shares his idea with colleagues at the U.S. Department of Defense Advanced Research Projects Agency (ARPA).</p>
+              </li>
+              <li id="1976">
+                <img src="https://www.google.co.in/url?sa=i&url=https%3A%2F%2Fwww.thebulwark.com%2Fthe-stupidest-einstein-meme%2F&psig=AOvVaw0Ey9gr4sRX8moiqGkBzOlg&ust=1647705785820000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMjFismE0PYCFQAAAAAdAAAAABAD"/>
+                <h1>The OG Meme Lord</h1>
+                <p>Richard Dawkins, author of The Selfish Gene, coined the term "meme" back in 1976 and intended for it to be used in terms of evolutionary biology. But then the internet came along and adopted the phrase.
+In a 2013 interview, Dawkins said "the internet is a first class ecology for memes to spread, and it's no wonder that the world 'meme' has taken up in the internet, because that's exactly what it is."
+</p>
+              </li>
+              <li id="1978">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/icons-on-a-computer-screen-royalty-free-image-1572519709.jpg?crop=1xw:1xh;center,top&resize=980:*"/>
+                <h1>The Birth of Spam</h1>
+                <p>The world's first spam mail was sent in May 1978 by Gary Thuerk, who sent a message to hundreds of ARPA users. "I thought of it as e-marketing," Thuerk has said of his mass unsolicited email promoting a new product rollout.
+Thuerk made his company millions with sales resulting from the spam, but also noted that "complaints started coming in almost immediately."
+That hasn't really changed. People didn't like spam then and we certainly don't like it now.</p>
+              </li>
+              <li id="1986">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/top-level-domain-1572464664.jpg?crop=1xw:1xh;center,top&resize=980:*" />
+                <h1>Hello, Top Level Domains</h1>
+                <p>In 1986, Jon Postel introduced top level domains (.com, .org, .gov, .edu, and .mil) to the world.
+Postel was a computer scientist who led the domain name system (DNS) and was referred to as the "God of the Internet" for his immense know-how and influence. In 2012, he was posthumously inducted into the Internet Hall of Fame.
+Pro tip: If you have an .edu email, you can access six months of Amazon's Prime membership for free. Adobe, Spotify, and others also offer great deals with a .edu email. Thanks, Mr. Postel.</p>
+              </li>
+              <li id="1990">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2019-10-31-at-11-54-42-am-1572537323.png?crop=0.821xw:1.00xh;0.0578xw,0&resize=980:*" />
+                <h1>Photoshop Enters the Fold</h1>
+                <p>In 1990, the first commercial version of Photoshop was released by Adobe, changing the photo editing game forever. Decades later, it's still the most widely used photo editing tool.</p>
+              </li>
+              <li id="1993">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/former-netscape-vice-president-marc-andreessen-speaks-at-news-photo-1572465261.jpg?crop=1xw:1xh;center,top&resize=980:*" />
+                <h1>Mosaic Changes the Game</h1>
+                <p>Marc Andreessen (pictured) and Eric Bina launched Mosaic, "the first popular web browser," in January 1993. Part of the reason Mosaic became instantly popular was because it was fast and allowed users to see images embedded on pages.</p>
+              </li>
+              <li id="1994">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-the-yahoo-homepage-news-photo-1572522750.jpg?crop=1xw:1xh;center,top&resize=980:*" />
+                <h1>The First Online Webcam</h1>
+                <p>In February 1994, Yahoo was born. The site, created by David Filo and Jerry Yang, was originally called "Jerry and David’s Guide to the World Wide Web." Good thing they changed it, because it would take more time to type that into a search bar than "Yahoo."</p>
+              </li>
+              <li id="2001">
+                <h1>Wikipedia</h1>
+                <p>Wikipedia is founded as a "multilingual, web-based, free-content encyclopedia", to which anyone can contribute, and which anyone can access. By 2014 the English-language version has about 4.5million entries</p>
+              </li>
+              <li id="2012">
+                <h1>Sopa, Pipa, Acta</h1>
+                <p>The Stop Online Piracy act (Sopa) and the Protect Intellectual Property Act (Pipa) are two pieces of proposed US legislation that their proponents claim will protect copyright owners. Others say the effect will be web censorship. Wikipedia takes the threat so seriously that it goes on strike for a day. Both bills falter.
+</p>
+              </li>
+              <li id="2014">
+                <h1>Cameron's 'opt-in' censorship</h1>
+                <p>David Cameron pushes for default content filters operated by internet service providers, with users able to request that they be lifted, saying it will protect children from pornography. Campaigner Cory Doctorow says it will fail in this success.</p>
+              </li>
+            </ul>
+            <div id="grad_top"></div>
+            <div id="grad_bottom"></div>
+            <a href="#" id="next">+</a>
+            <a href="#" id="prev">-</a>
+          </div>
+        </body>
+        <script>
+            $(function () {
+                $().timelinr({
+                  orientation: "vertical",
+                  issuesSpeed: 300,
+                  datesSpeed: 100,
+                  arrowKeys: "true",
+                  startAt: 3
+                });
+              });
+              
+        </script>
+</html>
